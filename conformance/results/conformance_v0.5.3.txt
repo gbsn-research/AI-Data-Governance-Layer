@@ -13,7 +13,7 @@ PASS C11 conflict preservation
 PASS C12 derived restriction propagation
 PASS C13 audit completeness
 PASS C14 deterministic replay
-PASS C15 cross-implementation equivalence
+PASS C15 portable-subset interpreter equivalence
 PASS C16 deterministic policy composition
 PASS C17 analysis method governance
 PASS C18 no-infer-missing

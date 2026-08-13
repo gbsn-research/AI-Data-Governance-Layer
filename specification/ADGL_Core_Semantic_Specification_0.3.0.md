@@ -1,6 +1,6 @@
 **GBSN Research**
 
-Lisbon, Portugal \| Contact: www.gbsnresearch.com — use Contacts
+Lisbon, Portugal \| Correspondence: publications@gbsnresearch.com
 
 *Normative working draft companion to ADGL Main Paper v0.9*
 

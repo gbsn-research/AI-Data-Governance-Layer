@@ -19,10 +19,10 @@ AUDIT + PROVENANCE spans the complete governance trajectory.
 
 | Artifact | Version |
 |---|---:|
-| Public distribution package | 0.4.3 |
+| Public research release | 0.4.4 (Release 2) |
 | Core semantic specification | 0.3.0 |
 | Reference toolkit | 0.5.3 |
-| Main research paper | 0.9 |
+| Main research paper | 1.2 submission master |
 | Reference cases | 8 |
 | Published normative conformance checks | 25 |
 | Candidate execution-integrity checks | 11 |
@@ -38,7 +38,7 @@ governance questions:
 1. **Analysis Governance:** what may be done with admitted knowledge?
 2. **Consequence Governance:** what may happen because of the resulting analysis?
 
-ADGL separates those questions so the same portable governance semantics can be implemented across different models,
+ADGL separates those questions through governance semantics designed to support implementation across different models,
 clouds, databases, retrieval systems, workflow tools, and agent frameworks.
 
 ## Quick start
@@ -106,8 +106,13 @@ or this reference engine. The Python toolkit exists to make the proposal executa
 ## Research and standards status
 
 ADGL is being released for public technical review, independent implementation, interoperability testing, empirical
-evaluation, and standards discussion. The high-level architecture is intentionally model-, storage-, and
-retrieval-neutral.
+evaluation, and standards discussion. The high-level architecture is designed to be model-, storage-, and
+retrieval-neutral. ADGL is a GBSN Research-maintained working specification, not a stakeholder-ratified standard or
+independent certification scheme.
+
+GBSN Research also develops KEE, a separate proprietary commercial implementation. KEE is not required to implement
+ADGL and does not define normative conformance. See `COMMERCIAL_DISCLOSURE.md`, `IMPLEMENTATIONS.md`, and
+`CONFORMANCE_CLAIMS.md`.
 
 ## Licensing
 
@@ -116,11 +121,13 @@ retrieval-neutral.
 
 See `LICENSE` and `LICENSE-DOCUMENTATION.md`.
 
-## Maintainer
+## Contact and maintainer
 
-**GBSN Research**  
-Lisbon, Portugal  
-Contact: **www.gbsnresearch.com** — use **Contacts**.
+**GBSN Research**, Lisbon, Portugal
+
+- Scholarly correspondence and publication enquiries: **publications@gbsnresearch.com**
+- ADGL technical and specification enquiries: **aidatagovernance@gbsnresearch.com**
+- Security vulnerabilities: follow `SECURITY.md`.
 
 ## Citation
 

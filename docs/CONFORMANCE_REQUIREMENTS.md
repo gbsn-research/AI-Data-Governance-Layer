@@ -1,6 +1,6 @@
 # ADGL 0.3 Minimum Reference Conformance Fixtures
 
-The v0.9 paper package defines twenty-five published normative falsifiable checks (C01-C25). Toolkit 0.5.3 preserves those checks and adds eleven candidate execution-integrity checks (C26-C36) for the next specification-hardening cycle:
+The paper-evaluated baseline defines twenty-five published normative falsifiable checks (C01-C25). Toolkit 0.5.3 preserves those checks and adds eleven candidate execution-integrity checks (C26-C36) for the next specification-hardening cycle:
 
 1. C01 Exclusion safety
 2. C02 Quarantine isolation
@@ -28,7 +28,7 @@ The v0.9 paper package defines twenty-five published normative falsifiable check
 24. C24 End-to-end audit stage coverage
 25. C25 Task-scoped action grant
 
-C15 compares the primary Engine against `portable_reference.py`, a deliberately independent mini-interpreter that does not import the primary compiler, selector, operation, or engine modules. It is evidence for portability only on the subset exercised by that fixture; it is not evidence of full cross-language or independent third-party interoperability.
+C15 compares the primary Engine against `portable_reference.py`, a deliberately separate producer-authored mini-interpreter that does not import the primary compiler, selector, operation, or engine modules. It is evidence for portability only on the subset exercised by that fixture; it is not evidence of full cross-language or independent third-party interoperability.
 
 Passing C01-C25 demonstrates the behaviors tested by the published paper-era suite. Passing C26-C36 additionally demonstrates the current candidate integrity behavior of Toolkit 0.5.3. It is not a blanket claim of production readiness or full conformance with future ADGL Profiles.
 

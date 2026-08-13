@@ -12,3 +12,8 @@ The paper package is organized as:
 - Appendix E — Comparative Analysis
 
 The Markdown exports are provided for repository browsing. The DOCX files preserve the publication-layout source.
+
+Current submission master: **Main Paper v1.2** with synchronized companion appendices.
+
+- Scholarly correspondence: `publications@gbsnresearch.com`
+- ADGL technical and specification enquiries: `aidatagovernance@gbsnresearch.com`

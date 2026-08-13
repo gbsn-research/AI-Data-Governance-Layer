@@ -1,4 +1,4 @@
-# Paper-to-Toolkit Mapping — Research Release 0.4.0
+# Paper-to-Toolkit Mapping — Public Research Release 0.4.4
 
 | Research artifact construct | Toolkit location |
 |---|---|

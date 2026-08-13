@@ -1,122 +1,366 @@
+**ADGL Appendix E - Comparative Analysis of Existing Governance
+Mechanisms**
+
 **GBSN Research**
 
-Lisbon, Portugal \| Contact: www.gbsnresearch.com — use Contacts
+Lisbon, Portugal \| Correspondence: publications@gbsnresearch.com
 
-*Positioning ADGL as a complementary semantic layer*
+*Academic preprint edition \| Public Research Release 0.4.3*
 
-# E.1 COMPARISON PRINCIPLE
+Positioning ADGL as a complementary execution-semantic layer
 
-The comparison asks whether existing mechanisms standardize the same governance object, not whether they are technically capable of expressing overlapping rules. General-purpose authorization or policy engines can encode many ADGL constraints. ADGL's proposal is a common semantic chain for knowledge participation, analytical computation, consequence disposition, and audit.
+# E.1 Comparison Principle
 
-# E.2 TRADITIONAL DATA GOVERNANCE
+The comparison asks whether existing mechanisms standardize the same
+governance object, not whether they are technically capable of
+expressing overlapping rules. General-purpose policy systems can encode
+many ADGL constraints, provenance systems can represent lineage,
+AI-management standards can define organizational controls, and emerging
+agent-governance systems can mediate actions. ADGL's narrower hypothesis
+is that a shared semantic chain spanning knowledge influence, analytical
+computation, consequence disposition, and end-to-end audit is useful
+across those mechanisms.
 
-Traditional data governance addresses ownership, stewardship, classification, quality, lineage, retention, access, and lifecycle. ADGL consumes such metadata and extends the governance boundary into AI/analytical execution. A document can be validly stored and accessible yet still be excluded from a Case, prohibited from a specific analysis, or limited to an informational consequence.
+# E.2 Traditional Data Governance and Documentation
 
-# E.3 IAM, RBAC, AND ABAC
+Traditional data governance addresses ownership, stewardship,
+classification, quality, lineage, retention, access, and lifecycle. Data
+Statements, Datasheets for Datasets, and Model Cards add structured
+documentation of origin, composition, intended use, evaluation, and
+limitations \[11\]-\[13\]. ADGL consumes such information as policy
+context but adds a runtime question: given this Case, may this object
+influence this computation, under what evidentiary role, and with what
+downstream restrictions? Documentation therefore supplies facts; ADGL
+proposes decision semantics over those facts.
 
-IAM and access-control systems establish who or what may access resources or perform actions. ADGL should depend on, not replace, these controls. Its additional concern is what accessible knowledge may influence, how it may be analyzed, and whether the result has authority to cause a consequential action.
+# E.3 IAM, RBAC, ABAC, XACML, OPA, and Cedar
 
-# E.4 XACML
+IAM and access-control systems establish who or what may access a
+resource or invoke an action. XACML defines a mature
+authorization-policy processing model with combining algorithms and
+obligations/advice \[1\]. OPA separates policy decision-making from
+enforcement through declarative Rego \[2\]. Cedar evaluates
+principal-action-resource-context authorization requests \[3\]. These
+mechanisms are plausible substrates for ADGL decisions. The additional
+ADGL vocabulary concerns evidentiary role, applicability, analytical
+method, validation, consequence disposition, decision ownership, and
+action capability; ADGL does not claim that general policy engines are
+incapable of encoding such conditions.
 
-XACML defines a mature authorization-policy processing model with rule/policy combining and related obligations/advice \[5\]. ADGL could potentially compile subsets of its policy semantics to XACML. The proposed difference is domain vocabulary and stage semantics, not a claim that XACML cannot encode equivalent rules.
+# E.4 Usage Control and Information-Flow Control
 
-# E.5 OPEN POLICY AGENT / REGO
+UCON is important prior art because it rejects the assumption that
+governance ends at initial access, adding ongoing authorizations,
+obligations, conditions, continuity, and mutable attributes \[4\].
+Information-flow systems such as SIF likewise track confidentiality and
+integrity as information propagates through applications rather than
+treating access as the only control boundary \[5\]. ADGL should
+therefore not claim novelty from persistent or post-access control. Its
+specialization is the decomposition of AI/analytical execution into
+Knowledge, Analysis, and Consequence stages with explicit decision
+rights and stage-qualified audit.
 
-OPA is a domain-agnostic general-purpose policy engine that accepts structured input and returns policy decisions, explicitly separating decision-making from enforcement \[6\]. This makes it a plausible execution substrate for ADGL. An important future experiment is to compile ADGL policies into Rego and compare observable results against the native reference runtime.
+# E.5 W3C ODRL and Rights Expression
 
-# E.6 CEDAR
+ODRL defines permissions, prohibitions, duties, constraints, conflict
+strategies, inheritance, and extensible Profiles \[6\]. It is a close
+standards precedent for expressing usage policy over assets. ADGL should
+investigate an ODRL Profile or mapping rather than create unnecessary
+incompatibility. Candidate ADGL-specific terms include evidence role,
+governing authority, Case applicability, analytical method and
+validation state, result disposition, human decision right, action
+capability, and audit-stage semantics.
 
-Cedar standardizes authorization decisions around principal, action, resource, and context \[7\]. It is particularly relevant to ACT authorization and to access boundaries around tools and data. ADGL adds knowledge/evidence and analysis semantics that are not native Cedar concepts, while Cedar may remain an enforcement substrate for particular consequence decisions.
+# E.6 W3C PROV and Provenance Infrastructure
 
-# E.7 USAGE CONTROL (UCON)
+PROV-O represents entities, activities, agents, generation, use,
+derivation, and attribution \[7\]. ADGL can map KnowledgeObjects,
+Analysis activities, AnalysisResults, HumanDecisions, and Action
+outcomes into PROV structures while attaching policy meaning such as
+admissibility or restriction propagation. Provenance answers where an
+object came from and how it was produced; ADGL asks what that provenance
+permits in a current Case. The two are complementary.
 
-UCON is important prior art because it rejects the assumption that control ends at initial access \[8\]. It introduces authorizations, obligations, conditions, continuity of control, and mutable attributes. ADGL should not claim to invent post-access governance. Its specialization is the governance chain from knowledge influence through analytical computation to AI-mediated consequences.
+# E.7 Retrieval-Augmented Systems and Knowledge Infrastructure
 
-# E.8 W3C ODRL
+REALM and RAG demonstrate how external, non-parametric knowledge can
+become operational inside model inference \[8\], \[9\]. Search ranking,
+vector similarity, and knowledge-graph relationships can supply
+candidate objects and relevance signals. ADGL remains retrieval-neutral
+because retrieval is not treated as admission: a correctly retrieved
+object may still be superseded, inapplicable, quarantined, restricted,
+or permitted only in a limited evidentiary role.
 
-ODRL is the closest standards precedent to ADGL as an extensible semantic policy model. It defines permissions, prohibitions, duties, constraints, conflict strategy, inheritance, and community Profiles \[9\]. ADGL should explicitly investigate an ODRL Profile or mapping rather than creating unnecessary incompatibility. ADGL-specific candidate terms include evidence role, governing authority, case applicability, analytical method/validation, result disposition, decision rights, and audit semantics.
+# E.8 Production ML Engineering and Accountability
 
-# E.9 W3C PROV
+Production-ML research identifies hidden data dependencies, feedback
+loops, undeclared consumers, system entanglement, and monitoring gaps
+that are not visible in model accuracy alone \[14\]-\[16\].
+Algorithmic-auditing research likewise argues for end-to-end
+accountability processes and infrastructure rather than isolated model
+evaluation \[17\], \[18\]. ADGL aligns with this system-level
+perspective but focuses on a narrower unit: the runtime governance
+trajectory of a policy-bound Case.
 
-PROV-O represents and interchanges provenance across entities, activities, and agents \[10\]. ADGL can map KnowledgeObjects, Analysis activities, actors, generated AnalysisResults, and Action outcomes onto PROV structures while attaching policy consequences such as restriction propagation. Provenance is therefore complementary infrastructure, not a competitor.
+# E.9 Human-Automation Interaction and Decision Authority
 
-# E.10 RAG, SEARCH, AND KNOWLEDGE GRAPHS
+Parasuraman, Sheridan, and Wickens distinguish automation of information
+analysis, decision/action selection, and action implementation \[19\].
+Bainbridge and Endsley/Kiris show that nominal human oversight can
+become fragile when automation leaves operators out of the loop or
+responsible primarily for abnormal takeover \[20\], \[21\]. ADGL's
+INFORM, DECIDE, and ACT vocabulary is consistent with the need to
+distinguish informational output, human-owned consequential choice, and
+machine implementation, while separately allowing human validation
+inside Analysis Governance.
 
-RAG and related retrieval architectures supply external context to models \[11\], \[12\]. Search ranking and knowledge graphs supply relevance, authority-like signals, and relationships. ADGL remains retrieval-neutral: retrieval creates candidate knowledge; Knowledge Governance decides admissibility; Analysis Governance decides permitted analytical use.
+# E.10 MCP, Tool Use, and Agent Identity
 
-# E.11 MCP AND INTEROPERABILITY PROTOCOLS
+MCP standardizes interfaces and authorization mechanisms for clients
+accessing resources and tools \[22\]. NIST's 2026 AI Agent Standards
+Initiative and NCCoE identity/authorization project emphasize secure
+interoperability, agent identity, authentication, authorization, and
+access to diverse datasets, tools, and applications \[23\], \[24\].
+These mechanisms supply transport and identity prerequisites. ADGL
+treats agentic behavior as one ACT consequence and asks whether a
+governed result is permitted to authorize a specific action in the
+current Case.
 
-The current MCP authorization specification defines transport-level authorization for clients accessing restricted servers using established OAuth mechanisms \[13\]. ADGL is complementary because transport authorization does not determine evidentiary role, analytical method, consequence disposition, or decision rights. MCP can be one enforcement/transport boundary for ADGL-governed tools.
+# E.11 Emerging Runtime Governance for Agents
 
-# E.12 NIST AI RMF AND ISO/IEC 42001
+Several recent proposals are directly relevant and narrow ADGL's novelty
+boundary. Policy Cards encode deployment-layer runtime constraints and
+audit hooks for autonomous agents \[25\]. AgentSpec supplies a DSL for
+customizable runtime enforcement \[26\]. Policies on Paths models
+compliance over partial agent trajectories and organizational state
+\[27\]. Safety Sidecar adds a portable runtime controller with external
+verification before action release and memory updates \[28\]. Zwerdling
+et al. compile company-policy documents into deterministic guards linked
+to tool use \[29\]. These works provide stronger agent/action-focused
+runtime controls than ADGL currently demonstrates. ADGL's proposed
+distinction is broader scope: upstream Knowledge and Analysis governance
+plus a consequence model that includes informational and human-decision
+outcomes, not only autonomous action.
 
-NIST AI RMF provides organizational risk-management functions \[1\], and ISO/IEC 42001 specifies requirements for an AI management system \[3\]. ADGL is a technical execution architecture that may provide machine-executable controls and audit evidence in support of such governance programs. It is not a replacement management-system standard.
+# E.12 Prompt Injection and Tool-Layer Security
 
-# E.13 EU AI ACT
+Indirect prompt injection demonstrates that retrieved content can
+influence instructions and downstream API behavior \[10\]. This problem
+is not solved by a governance vocabulary alone. ADGL can provide
+explicit places to attach controls - source integrity and isolation
+during Knowledge Governance, method/tool and instruction boundaries
+during Analysis Governance, and bounded action authorization in
+Consequence Governance - while specialized security systems enforce the
+technical boundary.
 
-The EU AI Act establishes legal requirements for defined systems and contexts, including provisions on data governance, records/logging, technical documentation, and human oversight \[4\]. ADGL can express technical controls and evidence that organizations map to applicable requirements, but implementing ADGL does not itself establish legal compliance. Geographic processing examples in ADGL represent policy capability, not a universal claim that EU data must remain in the EU.
+# E.13 NIST AI RMF, ISO/IEC 42001, and the EU AI Act
 
-# E.14 AGENT GOVERNANCE AND IDENTITY
+NIST AI RMF and its Generative AI Profile provide organizational
+risk-management structures and risk actions \[30\], \[31\]. ISO/IEC
+42001 specifies requirements for an organizational AI management system
+\[32\]. The EU AI Act establishes legal requirements for defined systems
+and uses, including risk management, data governance, documentation,
+logging, transparency, and human oversight \[33\]. ADGL can express and
+record technical controls that an organization maps to such obligations,
+but use of ADGL does not establish legal compliance or management-system
+conformity.
 
-NIST's 2026 AI Agent Standards Initiative and NCCoE agent identity/authorization work emphasize secure, interoperable agent identity and access to external systems \[14\], \[15\]. ADGL places agentic behavior inside ACT Consequence Governance. Agent identity and authorization can supply prerequisites; ADGL determines whether a governed result is permitted to trigger a particular consequential action in the current Case.
+# E.14 Contemporary Agent-Security Evidence
 
-# E.15 OPERATIONAL SECURITY INCIDENTS
+A July 2026 OpenAI/Hugging Face incident during model evaluation
+illustrates the distinction between semantic requirements and physical
+enforcement. OpenAI reports that models in a restricted cyber evaluation
+chained vulnerabilities to obtain Internet access and reach Hugging Face
+production infrastructure \[34\]. The public account remains
+preliminary. The relevant comparison is therefore limited: a governance
+rule may require a sandbox, region, or no-fallback condition, but
+containment must be enforced and observed by infrastructure. NIST's 2026
+analysis of public comments on agent security similarly reports broad
+concern that existing cybersecurity practices need adaptation for agent
+systems \[35\].
 
-A 2026 OpenAI/Hugging Face security incident during model evaluation showed models obtaining Internet access by exploiting a previously unknown vulnerability despite the evaluation environment not granting direct Internet access \[16\]. The architectural lesson for ADGL is boundary discipline: semantic policy can require a sandbox, local processing, or restricted egress, but physical containment must be enforced by infrastructure and independently validated. ADGL should record the requirement and observed enforcement state rather than claim that policy syntax itself provides containment.
+# E.15 Comparative Capability Matrix
 
-# E.16 COMPARATIVE CAPABILITY MATRIX
+| **Mechanism**                                 | **Primary scope**                       | **Knowledge**                     | **Analysis**                     | **Consequence**                        | **Audit / provenance** |
+|-----------------------------------------------|-----------------------------------------|-----------------------------------|----------------------------------|----------------------------------------|------------------------|
+| ADGL                                          | Execution-semantic chain                | Native evidence roles/admission   | Native method/model/validation   | INFORM / DECIDE / ACT                  | Cross-stage audit      |
+| IAM / RBAC / ABAC                             | Identity and entitlement                | Indirect                          | No common analytical semantics   | Action entitlement                     | Access/audit logs      |
+| XACML / OPA / Cedar                           | General authorization/policy evaluation | Custom                            | Custom                           | Custom / action authorization          | Decision telemetry     |
+| UCON / information-flow control               | Ongoing usage and propagation           | Generic/persistent control        | Generic conditions               | Ongoing usage                          | Policy/flow events     |
+| ODRL                                          | Rights and usage policy                 | Asset use / constraints           | Constraints/duties               | Actions/permissions/duties             | Policy representation  |
+| W3C PROV                                      | Provenance and derivation               | Lineage                           | Activities                       | Action lineage possible                | Native provenance      |
+| Datasheets / Data Statements / Model Cards    | Documentation/transparency              | Rich metadata                     | Evaluation/intended-use metadata | No runtime consequence model           | Documentation record   |
+| NIST AI RMF / ISO 42001 / EU AI Act           | Risk, management, legal obligations     | Governance-level                  | Governance-level                 | Governance/human-oversight obligations | Governance evidence    |
+| MCP / agent identity                          | Transport/tool/resource authorization   | No evidence semantics             | No common analytical semantics   | Tool/server authorization              | Protocol logs          |
+| Policy Cards / AgentSpec / path/guard systems | Runtime autonomous-agent control        | Some evidence/context constraints | Trajectory/guard-specific        | Strong action/tool mediation           | Runtime/audit hooks    |
 
-| **Mechanism** | **Primary scope**            | **Knowledge semantics** | **Analysis semantics** | **Consequence semantics**       | **Audit/provenance**            |
-|---------------|------------------------------|-------------------------|------------------------|---------------------------------|---------------------------------|
-| ADGL          | AI/analytic governance chain | Native                  | Native                 | INFORM/DECIDE/ACT               | Native cross-stage              |
-| IAM/RBAC/ABAC | Identity/access              | Indirect                | No standard semantics  | Action authorization only       | Access logs                     |
-| XACML         | Authorization policy         | Custom                  | Custom                 | Custom                          | Decision/obligation integration |
-| OPA/Rego      | General policy engine        | Custom                  | Custom                 | Custom                          | Decision logs/telemetry         |
-| Cedar         | Authorization                | Indirect                | No standard semantics  | Principal/action/resource       | Authorization decisions         |
-| UCON          | Ongoing usage control        | Generic                 | Generic conditions     | Ongoing usage                   | Policy events                   |
-| ODRL          | Rights/usage policy          | Asset use               | Constraints/duties     | Actions/permissions/duties      | Policy representation           |
-| W3C PROV      | Provenance                   | Lineage                 | Activities             | Action lineage possible         | Native provenance               |
-| NIST AI RMF   | Risk management              | Governance-level        | Governance-level       | Governance-level                | Governance outcomes             |
-| ISO 42001     | AI management system         | Management-level        | Management-level       | Management-level                | Management evidence             |
-| MCP auth      | Transport authorization      | No                      | No                     | Tool/server authorization       | Protocol logs                   |
-| EU AI Act     | Legal obligations            | Regulated requirements  | Regulated requirements | Human oversight/use obligations | Records/logging in scope        |
+# E.16 Novelty Boundary and Non-Claim of Exclusivity
 
-# E.17 NOVELTY BOUNDARY AND NON-CLAIM OF EXCLUSIVITY
+ADGL does not claim to invent allow/deny policy, post-access control,
+provenance, obligations, dataset/model documentation, human review,
+action authorization, runtime interception, or audit. Recent
+runtime-governance research makes especially clear that policy
+enforcement for autonomous agents is already an active field. The
+proposed contribution should instead be evaluated as a domain-specific
+semantic composition: a shared Case-scoped chain that distinguishes what
+may influence computation, what analysis is permitted, and what
+consequence rights attach to the resulting analysis, with audit across
+all stages.
 
-ADGL does not claim exclusive capability for any individual allow/deny, provenance, authorization, duty, human-review, or audit control. Its contribution should be evaluated as a proposed domain-specific semantic model and conformance architecture that links three governance stages across heterogeneous AI and analytical systems. If existing standards can carry ADGL semantics through profiles or mappings, that interoperability should be preferred to unnecessary reinvention.
+This is a falsifiable and deliberately conservative novelty claim. If
+existing standards can carry the same semantics through profiles or
+mappings with equivalent conformance behavior, interoperability is
+preferable to a parallel ecosystem. If independent implementations
+cannot agree on the meaning of the proposed states and transitions, the
+standardization hypothesis is weakened.
 
-# REFERENCES
+# E.17 Interoperability and Research Agenda
 
-\[1\] E. Tabassi, Artificial Intelligence Risk Management Framework (AI RMF 1.0), NIST AI 100-1, Jan. 2023.
+- Formalize mappings or profiles for ODRL permissions, duties,
+  constraints, and inheritance.
 
-\[2\] C. Autio et al., Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile, NIST AI 600-1, July 2024.
+- Compile a defined portable subset to XACML, Rego, and/or Cedar and
+  test cross-engine equivalence.
 
-\[3\] ISO/IEC 42001:2023, Information technology - Artificial intelligence - Management system, 2023.
+- Map KnowledgeObjects, Analysis activities, results, human decisions,
+  and actions to W3C PROV.
 
-\[4\] European Parliament and Council, Regulation (EU) 2024/1689 laying down harmonised rules on artificial intelligence, 2024.
+- Define MCP/tool integration guidance that separates transport
+  authorization from semantic action authorization.
 
-\[5\] OASIS, eXtensible Access Control Markup Language (XACML) Version 3.0, 2013.
+- Compare ADGL ACT semantics empirically with AgentSpec, Policy Cards,
+  path-based runtime policies, and action-guard systems rather than
+  relying only on conceptual comparison.
 
-\[6\] Open Policy Agent, Open Policy Agent Documentation, accessed Aug. 2026.
+- Conduct independent implementation and adversarial
+  cross-implementation conformance testing.
 
-\[7\] Cedar Policy Language, Cedar Policy Language Reference Guide, accessed Aug. 2026.
+- Evaluate whether human DECIDE Profiles create meaningful oversight
+  rather than nominal checkpoints.
 
-\[8\] J. Park and R. Sandhu, The UCONABC Usage Control Model, ACM Trans. Inf. Syst. Secur., vol. 7, no. 1, pp. 128-174, 2004.
+# E.18 EVIDENTIARY LIMIT OF THE COMPARISON
 
-\[9\] W3C, ODRL Information Model 2.2, W3C Recommendation, Feb. 2018.
+The comparisons in this appendix are analytical feature and scope
+comparisons. They do not constitute completed semantic translations,
+empirical interoperability experiments, or evidence that established
+mechanisms cannot represent ADGL cases.
 
-\[10\] W3C, PROV-O: The PROV Ontology, W3C Recommendation, Apr. 2013.
+The decisive next evaluation remains a full mapping of representative
+ADGL cases to Rego/OPA or Cedar and to ODRL plus PROV, followed by
+third-party implementation of shared test vectors. Until then,
+compositional portability and interoperability remain design hypotheses.
 
-\[11\] P. Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, NeurIPS, 2020.
+# References
 
-\[12\] K. Guu et al., REALM: Retrieval-Augmented Language Model Pre-Training, ICML, 2020.
+\[1\] OASIS, eXtensible Access Control Markup Language (XACML) Version
+3.0, OASIS Standard, 2013.
 
-\[13\] Model Context Protocol, Authorization Specification, version 2026-07-28.
+\[2\] Open Policy Agent, Policy Language and Authorization
+Documentation, accessed Aug. 2026.
 
-\[14\] NIST, AI Agent Standards Initiative, 2026.
+\[3\] Cedar Policy Language, Cedar Policy Language Reference Guide,
+version 4.5, accessed Aug. 2026.
 
-\[15\] NIST NCCoE, Accelerating the Adoption of Software and AI Agent Identity and Authorization, Draft Concept Paper, Feb. 2026.
+\[4\] J. Park and R. Sandhu, "The UCONABC Usage Control Model," ACM
+Transactions on Information and System Security, vol. 7, no. 1, pp.
+128-174, 2004.
 
-\[16\] OpenAI, OpenAI and Hugging Face partner to address security incident during model evaluation, July 2026.
+\[5\] S. Chong, K. Vikram, and A. C. Myers, "SIF: Enforcing
+Confidentiality and Integrity in Web Applications," 16th USENIX Security
+Symposium, 2007.
 
-\[17\] GBSN Research, From Observation to Orchestration: The Reliability-Actionability Framework for Automated Market Engines, Jan. 2026.
+\[6\] W3C, ODRL Information Model 2.2, W3C Recommendation, Feb. 2018.
+
+\[7\] W3C, PROV-O: The PROV Ontology, W3C Recommendation, Apr. 2013.
+
+\[8\] K. Guu et al., "REALM: Retrieval-Augmented Language Model
+Pre-Training," ICML, 2020.
+
+\[9\] P. Lewis et al., "Retrieval-Augmented Generation for
+Knowledge-Intensive NLP Tasks," NeurIPS, 2020.
+
+\[10\] K. Greshake et al., "More than you've asked for: A Comprehensive
+Analysis of Novel Prompt Injection Threats to Application-Integrated
+Large Language Models," arXiv:2302.12173, 2023.
+
+\[11\] E. M. Bender and B. Friedman, "Data Statements for Natural
+Language Processing," TACL, vol. 6, pp. 587-604, 2018.
+
+\[12\] T. Gebru et al., "Datasheets for Datasets," Communications of the
+ACM, vol. 64, no. 12, pp. 86-92, 2021.
+
+\[13\] M. Mitchell et al., "Model Cards for Model Reporting," FAT\*
+2019, pp. 220-229, 2019.
+
+\[14\] D. Sculley et al., "Hidden Technical Debt in Machine Learning
+Systems," NeurIPS, 2015.
+
+\[15\] E. Breck et al., "The ML Test Score," IEEE Big Data, 2017.
+
+\[16\] S. Amershi et al., "Software Engineering for Machine Learning: A
+Case Study," ICSE SEIP, 2019.
+
+\[17\] I. D. Raji et al., "Closing the AI Accountability Gap," FAT\*
+2020, 2020.
+
+\[18\] V. Ojewale et al., "Towards AI Accountability Infrastructure:
+Gaps and Opportunities in AI Audit Tooling," arXiv:2402.17861, revised
+2025.
+
+\[19\] R. Parasuraman, T. B. Sheridan, and C. D. Wickens, "A Model for
+Types and Levels of Human Interaction with Automation," IEEE SMC-A, vol.
+30, no. 3, pp. 286-297, 2000.
+
+\[20\] L. Bainbridge, "Ironies of Automation," Automatica, vol. 19, no.
+6, pp. 775-779, 1983.
+
+\[21\] M. R. Endsley and E. O. Kiris, "The Out-of-the-Loop Performance
+Problem and Level of Control in Automation," Human Factors, vol. 37, no.
+2, pp. 381-394, 1995.
+
+\[22\] Model Context Protocol, Authorization Specification, version
+2026-07-28, 2026.
+
+\[23\] National Institute of Standards and Technology, AI Agent
+Standards Initiative, 2026.
+
+\[24\] H. Booth, B. Fisher, R. Galluzzo, and J. Roberts, Accelerating
+the Adoption of Software and AI Agent Identity and Authorization, NCCoE
+Draft Concept Paper, Feb. 2026.
+
+\[25\] J. Mavračić, "Policy Cards: Machine-Readable Runtime Governance
+for Autonomous AI Agents," arXiv:2510.24383, 2025.
+
+\[26\] H. Wang, C. M. Poskitt, and J. Sun, "AgentSpec: Customizable
+Runtime Enforcement for Safe and Reliable LLM Agents," arXiv:2503.18666,
+2025.
+
+\[27\] M. Kaptein, V.-J. Khan, and A. Podstavnychy, "Runtime Governance
+for AI Agents: Policies on Paths," arXiv:2603.16586, 2026.
+
+\[28\] B. Wang et al., "Safety Sidecar: Reflection-Driven Runtime
+Control for Safer Agents," Findings of ACL 2026, pp. 30842-30856, 2026.
+
+\[29\] N. Zwerdling et al., "Towards Enforcing Company Policy Adherence
+in Agentic Workflows," EMNLP 2025 Industry Track, pp. 595-606, 2025.
+
+\[30\] E. Tabassi, Artificial Intelligence Risk Management Framework (AI
+RMF 1.0), NIST AI 100-1, 2023.
+
+\[31\] C. Autio et al., Artificial Intelligence Risk Management
+Framework: Generative Artificial Intelligence Profile, NIST AI 600-1,
+2024.
+
+\[32\] ISO/IEC 42001:2023, Information technology - Artificial
+intelligence - Management system, 2023.
+
+\[33\] European Parliament and Council, Regulation (EU) 2024/1689 laying
+down harmonised rules on artificial intelligence, 2024.
+
+\[34\] OpenAI, "OpenAI and Hugging Face partner to address security
+incident during model evaluation," July 21, 2026, with updates through
+July 29, 2026.
+
+\[35\] J. Riggs, M. Hamin, N. Perry, B. Edelman, and P. Cihon, Summary
+Analysis of Responses to the Request for Information Regarding Security
+Considerations for AI Agents, NIST AI 800-5, May 2026.

@@ -42,7 +42,7 @@ def _checks():
     sig=lambda r:(r['decision_state'],sorted(r['audit']['object_dispositions'].items()),[(o['id'],o.get('_adgl',{}).get('priority')) for o in r['all_objects']])
     tests.append(('C14 deterministic replay', sig(r1)==sig(r2)))
     native=_run(p,data); alt=portable_execute(p,data); native_sig=(native['decision_state'],native['audit']['object_dispositions'],{o['id']:o.get('_adgl',{}).get('priority') for o in native['all_objects'] if o.get('_adgl',{}).get('priority') is not None}); alt_sig=(alt['decision_state'],alt['object_dispositions'],alt['priorities'])
-    tests.append(('C15 cross-implementation equivalence', native_sig==alt_sig))
+    tests.append(('C15 portable-subset interpreter equivalence', native_sig==alt_sig))
     # Lower-precedence organizational ALLOW/role assignment is displaced by higher-precedence lifecycle quarantine.
     policies=[{'id':'org','version':1,'precedence_level':'organizational_defaults','rules':[{'id':'allow','select':{'id':'d'},'do':[{'allow':{}},{'assign_role':{'role':'PRIMARY'}}]}]},
               {'id':'life','version':1,'precedence_level':'lifecycle_restrictions','rules':[{'id':'q','select':{'id':'d'},'do':[{'quarantine':{}}]}]}]

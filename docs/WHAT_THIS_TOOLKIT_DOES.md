@@ -65,9 +65,9 @@ It also does not provide production IAM, agent discovery, secret management, har
 
 ## Conformance
 
-The v0.9 paper package defined **25 published normative executable checks**. Toolkit 0.5.3 preserves C01-C25 and adds **11 candidate execution-integrity checks (C26-C36)** identified through implementation testing. The candidate checks cover upstream terminal propagation, AnalysisResult contracts, explicit ACT authorization, trusted-time expiry, reference quota enforcement, effective-Action value authorization, mandatory human approval, finite numeric governance, strict case-scoped CapabilityGrant validation, human DECIDE resolution, and Action template constraints. They are deliberately not represented as already normative in Specification 0.3.0.
+The paper-evaluated baseline defined **25 published normative executable checks**. Toolkit 0.5.3 preserves C01-C25 and adds **11 candidate execution-integrity checks (C26-C36)** identified through implementation testing. The candidate checks cover upstream terminal propagation, AnalysisResult contracts, explicit ACT authorization, trusted-time expiry, reference quota enforcement, effective-Action value authorization, mandatory human approval, finite numeric governance, strict case-scoped CapabilityGrant validation, human DECIDE resolution, and Action template constraints. They are deliberately not represented as already normative in Specification 0.3.0.
 
-C15 compares the primary reference engine with an independent mini-interpreter bundled in the same research project on a deliberately limited portable subset. It is not evidence of full cross-language or independent third-party interoperability.
+C15 compares the primary reference engine with a separate producer-authored mini-interpreter bundled in the same research project on a deliberately limited portable subset. It is not evidence of full cross-language or independent third-party interoperability.
 
 ## Performance evaluation
 
