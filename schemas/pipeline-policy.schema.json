@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL Three-Stage Pipeline Policy Reference Serialization",
+  "type": "object",
+  "required": [
+    "knowledge_policy",
+    "analysis",
+    "consequence"
+  ],
+  "properties": {
+    "knowledge_policy": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object",
+      "properties": {
+        "method": {
+          "type": "string"
+        },
+        "allowed_methods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "min_evidence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "require_corroboration": {
+          "type": "boolean"
+        },
+        "do_not_infer_missing": {
+          "type": "boolean"
+        },
+        "validation_below_confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "consequence": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "enum": [
+            "INFORM",
+            "DECIDE",
+            "ACT"
+          ]
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "disposition"
+            ],
+            "properties": {
+              "when": {
+                "type": "object"
+              },
+              "disposition": {
+                "enum": [
+                  "INFORM",
+                  "DECIDE",
+                  "ACT"
+                ]
+              },
+              "decision_owner": {
+                "type": "string"
+              },
+              "executor": {
+                "type": "string"
+              },
+              "action": {
+                "type": "object"
+              },
+              "approval_required": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              },
+              "then": {
+                "enum": [
+                  "ACT"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

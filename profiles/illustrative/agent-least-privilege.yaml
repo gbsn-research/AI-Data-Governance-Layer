@@ -1,0 +1,14 @@
+profile:
+  id: agent-least-privilege
+  version: '0.1'
+  purpose: Agent Least-Privilege Profile
+  status: illustrative-non-normative
+  description: Illustrative task-scoped capability grants, action limits and action
+    audit.
+includes:
+- knowledge_governance
+- analysis_governance
+- consequence_governance
+- audit
+mappings:
+  status: informative

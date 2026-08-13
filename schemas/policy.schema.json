@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL Policy Reference Serialization",
+  "type": "object",
+  "required": [
+    "adgl",
+    "case"
+  ],
+  "properties": {
+    "adgl": {
+      "type": "object",
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "const": "0.3"
+        }
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {}
+      },
+      "required": [
+        "id",
+        "version"
+      ],
+      "additionalProperties": false
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "version": {},
+        "purpose": {
+          "type": "string"
+        },
+        "jurisdiction": {},
+        "classification": {
+          "type": "string"
+        },
+        "approved_regions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "do"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "select": {
+            "type": "object"
+          },
+          "when": {
+            "type": "object"
+          },
+          "if": {
+            "type": "object"
+          },
+          "do": {
+            "type": "array"
+          },
+          "precedence_level": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "string"
+        },
+        "on_missing_required": {
+          "type": "string"
+        },
+        "on_unresolved_conflict": {
+          "type": "string"
+        },
+        "on_no_route": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "audit": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    },
+    "precedence": {
+      "type": "array"
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "rules"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version": {},
+          "precedence_level": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "do"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "select": {
+                  "type": "object"
+                },
+                "when": {
+                  "type": "object"
+                },
+                "if": {
+                  "type": "object"
+                },
+                "do": {
+                  "type": "array"
+                },
+                "precedence_level": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

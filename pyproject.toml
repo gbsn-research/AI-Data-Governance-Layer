@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adgl-reference-toolkit"
+version = "0.5.3"
+description = "Experimental reference toolkit for the AI Data Governance Layer"
+requires-python = ">=3.10"
+dependencies = ["PyYAML>=6.0", "jsonschema>=4.20"]
+
+[project.scripts]
+adgl = "adgl.cli:main"
+
+[tool.setuptools]
+packages = ["adgl"]
+
+[tool.setuptools.package-data]
+adgl = ["schemas/*.json"]

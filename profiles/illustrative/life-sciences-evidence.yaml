@@ -1,0 +1,14 @@
+profile:
+  id: life-sciences-evidence
+  version: '0.1'
+  purpose: Life Sciences Evidence Profile
+  status: illustrative-non-normative
+  description: Illustrative evidence hierarchy, provenance and human-decision gates;
+    not a regulatory compliance claim.
+includes:
+- knowledge_governance
+- analysis_governance
+- consequence_governance
+- audit
+mappings:
+  status: informative

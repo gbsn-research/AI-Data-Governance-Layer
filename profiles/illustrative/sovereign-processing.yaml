@@ -1,0 +1,14 @@
+profile:
+  id: sovereign-processing
+  version: '0.1'
+  purpose: Sovereign Processing Profile
+  status: illustrative-non-normative
+  description: Illustrative controls for model/region eligibility, local-only processing
+    and no-fallback behavior.
+includes:
+- knowledge_governance
+- analysis_governance
+- consequence_governance
+- audit
+mappings:
+  status: informative

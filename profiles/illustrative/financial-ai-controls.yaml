@@ -1,0 +1,14 @@
+profile:
+  id: financial-ai-controls
+  version: '0.1'
+  purpose: Financial AI Controls Profile
+  status: illustrative-non-normative
+  description: Illustrative decision-rights, action limits and audit controls; not
+    a compliance claim.
+includes:
+- knowledge_governance
+- analysis_governance
+- consequence_governance
+- audit
+mappings:
+  status: informative

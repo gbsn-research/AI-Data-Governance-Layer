@@ -1,0 +1,14 @@
+profile:
+  id: regulatory-control-mapping
+  version: '0.1'
+  purpose: Regulatory Control Mapping Profile
+  status: illustrative-non-normative
+  description: Illustrative mapping container for technical controls to external requirements;
+    mappings are informative.
+includes:
+- knowledge_governance
+- analysis_governance
+- consequence_governance
+- audit
+mappings:
+  status: informative
