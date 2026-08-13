@@ -1,0 +1,17 @@
+adgl: {version: "0.3"}
+policy: {id: eu-restricted-data-routing, version: 1}
+profiles: [core, model_and_geography]
+case:
+  id: restricted_customer_analysis
+  purpose: customer_analysis
+  classification: RESTRICTED
+  jurisdiction: EU
+  approved_regions: [eu-west, eu-central]
+rules:
+  - id: admit_restricted
+    select: {all: [{classification: RESTRICTED}, {region: EU}]}
+    do: [{allow: {}}]
+  - id: choose_private_eu
+    do: [{route: {deployment: customer_controlled}}]
+decision: {default: PERMITTED, on_missing_required: BLOCKED}
+audit: {required: true}

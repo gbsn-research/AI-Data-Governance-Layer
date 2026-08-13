@@ -1,0 +1,22 @@
+adgl: {version: "0.3"}
+policy: {id: eu-product-claim-review, version: 1}
+profiles: [core, evidence_governance]
+case: {id: eu_product_claim_review, purpose: regulatory_claim_validation, jurisdiction: EU}
+rules:
+  - id: regulator_governing
+    select: {all: [{source.type: regulator}, {jurisdiction: EU}]}
+    do: [{assign_role: {role: GOVERNING}}]
+  - id: approved_internal_primary
+    select: {all: [{source.id: internal_research}, {status: approved}]}
+    do: [{assign_role: {role: PRIMARY}}, {prioritize: {rank: 100}}]
+  - id: public_supplementary
+    select: {source.type: public_web}
+    do: [{assign_role: {role: SUPPLEMENTARY}}]
+  - id: quarantine_drafts
+    select: {status: draft}
+    do: [{quarantine: {reason: unapproved_content}}]
+  - id: exclude_superseded
+    select: {status: superseded}
+    do: [{exclude: {reason: superseded_for_current_decision}}]
+decision: {default: PERMITTED, on_unresolved_conflict: AWAITING_REVIEW}
+audit: {required: true}

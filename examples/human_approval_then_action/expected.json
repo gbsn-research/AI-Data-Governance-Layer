@@ -1,0 +1,9 @@
+{
+  "analysis_state": "VERIFIED",
+  "consequence": "ACT",
+  "path": [
+    "DECIDE",
+    "ACT"
+  ],
+  "consequence_status": "AUTHORIZED"
+}

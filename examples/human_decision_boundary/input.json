@@ -1,0 +1,16 @@
+{
+  "objects": [
+    {
+      "id": "evidence-1",
+      "status": "approved",
+      "provenance_status": "verified"
+    }
+  ],
+  "analysis_result": {
+    "id": "ar-2",
+    "confidence": 0.93,
+    "risk": "high",
+    "summary": "High-risk transaction",
+    "uses_inferred_missing": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "objects": [
+    {
+      "id": "lead-1",
+      "status": "approved",
+      "provenance_status": "verified"
+    }
+  ],
+  "analysis_result": {
+    "id": "ar-3",
+    "confidence": 0.97,
+    "eligible": true,
+    "uses_inferred_missing": false
+  },
+  "action": {
+    "type": "crm.add_campaign_member",
+    "target": "lead-1"
+  },
+  "capability_grant": {
+    "id": "g1",
+    "actions": [
+      "crm.add_campaign_member"
+    ],
+    "case_id": "autonomous_machine_action",
+    "max_calls": 1
+  }
+}

@@ -1,0 +1,25 @@
+adgl: {version: "0.3"}
+policy: {id: internal-first-product-strategy, version: 1}
+profiles: [core, evidence_governance]
+case: {id: product_strategy_analysis, purpose: internal_strategy}
+rules:
+  - id: internal_primary
+    select: {all: [{source.id: internal_research}, {status: approved}]}
+    do: [{assign_role: {role: PRIMARY}}, {prioritize: {rank: 100}}]
+  - id: customer_corroborating
+    select: {all: [{source.id: customer_interviews}, {provenance_status: verified}]}
+    do: [{assign_role: {role: CORROBORATING}}, {prioritize: {rank: 80}}]
+  - id: industry_contextual
+    select: {source.id: industry_reports}
+    do: [{assign_role: {role: CONTEXTUAL}}]
+  - id: web_supplementary
+    select: {source.id: public_web}
+    do: [{assign_role: {role: SUPPLEMENTARY}}]
+  - id: quarantine_internal_drafts
+    select: {all: [{source.id: internal_research}, {status: draft}]}
+    do: [{quarantine: {}}]
+  - id: exclude_unverified
+    select: {provenance_status: unverified}
+    do: [{exclude: {}}]
+decision: {default: PERMITTED, on_unresolved_conflict: QUALIFIED}
+audit: {required: true}

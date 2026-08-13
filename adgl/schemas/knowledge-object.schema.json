@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL KnowledgeObject",
+  "type": "object",
+  "required": [
+    "id"
+  ],
+  "properties": {
+    "id": {},
+    "type": {
+      "type": "string"
+    },
+    "source": {},
+    "status": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "jurisdiction": {},
+    "region": {},
+    "provenance_status": {
+      "type": "string"
+    },
+    "authority": {},
+    "priority": {},
+    "applicability": {},
+    "evidence_role": {
+      "type": "string"
+    },
+    "derivation": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

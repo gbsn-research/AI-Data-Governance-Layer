@@ -1,0 +1,29 @@
+knowledge_policy:
+  adgl:
+    version: '0.3'
+  policy:
+    id: human_decision_boundary
+    version: 1
+  case:
+    id: human_decision_boundary
+  rules: []
+  decision:
+    default: PERMITTED
+  audit:
+    required: true
+analysis:
+  method: SCORE
+  allowed_methods:
+  - SCORE
+  min_evidence: 1
+consequence:
+  default: INFORM
+  rules:
+  - when:
+      analysis.result.risk:
+        in:
+        - medium
+        - high
+    disposition: DECIDE
+    decision_owner: risk_officer
+    reason: consequential decision requires human owner

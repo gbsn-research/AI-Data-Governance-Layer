@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL Action",
+  "type": "object",
+  "required": [
+    "type"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "target": {},
+    "parameters": {},
+    "risk_class": {},
+    "reversible": {
+      "type": "boolean"
+    },
+    "financial_value": {
+      "type": "number",
+      "minimum": 0
+    }
+  },
+  "additionalProperties": true
+}

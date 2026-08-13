@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL AnalysisResult",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "uses_inferred_missing": {
+      "type": "boolean"
+    },
+    "summary": {},
+    "claims": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "confidence",
+    "uses_inferred_missing"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "objects": [
+    {
+      "id": "interview-1",
+      "source": {
+        "id": "customer_interviews"
+      },
+      "provenance_status": "verified",
+      "status": "active"
+    },
+    {
+      "id": "crm-1",
+      "source": {
+        "id": "crm"
+      },
+      "provenance_status": "verified",
+      "status": "active"
+    },
+    {
+      "id": "synthetic-1",
+      "content": {
+        "origin": "synthetic"
+      },
+      "provenance_status": "verified",
+      "status": "active"
+    },
+    {
+      "id": "spam-1",
+      "author_or_actor": "spam_account_19",
+      "status": "active"
+    },
+    {
+      "id": "draft-1",
+      "status": "draft",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "unknown-1",
+      "status": "active",
+      "provenance_status": "unknown"
+    },
+    {
+      "id": "old-1",
+      "status": "superseded",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "approved-study",
+      "status": "approved",
+      "provenance_status": "verified"
+    }
+  ]
+}

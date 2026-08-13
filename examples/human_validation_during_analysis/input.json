@@ -1,0 +1,15 @@
+{
+  "objects": [
+    {
+      "id": "signal-1",
+      "status": "approved",
+      "provenance_status": "verified"
+    }
+  ],
+  "analysis_result": {
+    "id": "ar-1",
+    "confidence": 0.74,
+    "summary": "Tentative classification",
+    "uses_inferred_missing": false
+  }
+}

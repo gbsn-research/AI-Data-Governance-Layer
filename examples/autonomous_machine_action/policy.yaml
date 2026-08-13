@@ -1,0 +1,31 @@
+knowledge_policy:
+  adgl:
+    version: '0.3'
+  policy:
+    id: autonomous_machine_action
+    version: 1
+  case:
+    id: autonomous_machine_action
+  rules: []
+  decision:
+    default: PERMITTED
+  audit:
+    required: true
+analysis:
+  method: CLASSIFY
+  allowed_methods:
+  - CLASSIFY
+  min_evidence: 1
+consequence:
+  default: INFORM
+  rules:
+  - when:
+      analysis.result.eligible: true
+      analysis.result.confidence:
+        between:
+        - 0.95
+        - 1.0
+    disposition: ACT
+    executor: crm_api
+    action:
+      type: crm.add_campaign_member

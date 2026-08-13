@@ -1,0 +1,56 @@
+{
+  "objects": [
+    {
+      "id": "ema-current",
+      "source": {
+        "type": "regulator",
+        "id": "ema"
+      },
+      "jurisdiction": "EU",
+      "status": "approved",
+      "authority": "regulatory",
+      "applicability": "applicable"
+    },
+    {
+      "id": "internal-approved",
+      "source": {
+        "id": "internal_research",
+        "type": "enterprise"
+      },
+      "status": "approved",
+      "authority": "organizational",
+      "applicability": "applicable"
+    },
+    {
+      "id": "internal-old",
+      "source": {
+        "id": "internal_policy"
+      },
+      "status": "superseded"
+    },
+    {
+      "id": "legal-draft",
+      "source": {
+        "id": "legal"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "public-commentary",
+      "source": {
+        "type": "public_web"
+      },
+      "status": "active"
+    }
+  ],
+  "conflicts": [
+    {
+      "type": "EVIDENCE_CONFLICT",
+      "between": [
+        "ema-current",
+        "internal-approved"
+      ],
+      "resolved": false
+    }
+  ]
+}

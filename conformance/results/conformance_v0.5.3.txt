@@ -1,0 +1,39 @@
+ADGL Conformance Suite v0.5.3 — 25 published normative + 11 candidate integrity checks
+PASS C01 exclusion safety
+PASS C02 quarantine isolation
+PASS C03 embargo enforcement
+PASS C04 supersession
+PASS C05 priority/authority separation
+PASS C06 applicability gating
+PASS C07 model eligibility
+PASS C08 region safety
+PASS C09 fallback safety
+PASS C10 mandatory evidence
+PASS C11 conflict preservation
+PASS C12 derived restriction propagation
+PASS C13 audit completeness
+PASS C14 deterministic replay
+PASS C15 cross-implementation equivalence
+PASS C16 deterministic policy composition
+PASS C17 analysis method governance
+PASS C18 no-infer-missing
+PASS C19 analysis corroboration gate
+PASS C20 INFORM disposition
+PASS C21 DECIDE disposition
+PASS C22 ACT capability authorization
+PASS C23 DECIDE-to-ACT transition
+PASS C24 end-to-end audit stage coverage
+PASS C25 task-scoped action grant
+PASS C26 [candidate] upstream terminal propagation
+PASS C27 [candidate] minimum AnalysisResult contract
+PASS C28 [candidate] ACT requires explicit authorization
+PASS C29 [candidate] expired action grant fails closed
+PASS C30 [candidate] in-process action quota enforcement
+PASS C31 [candidate] effective action value authorization
+PASS C32 [candidate] required human approval cannot be bypassed
+PASS C33 [candidate] finite numeric governance
+PASS C34 [candidate] CapabilityGrant schema and scope integrity
+PASS C35 [candidate] human DECIDE resolution
+PASS C36 [candidate] Action target/template constraint enforcement
+
+36/36 passed

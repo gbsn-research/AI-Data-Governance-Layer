@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software artifact, please cite the ADGL Reference Toolkit version used in your work."
+title: "ADGL Reference Toolkit"
+version: 0.5.3
+authors:
+  - name: "GBSN Research"
+    affiliation: "GBSN Research"
+date-released: 2026-08-13
+license: Apache-2.0

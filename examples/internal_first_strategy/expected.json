@@ -1,0 +1,13 @@
+{
+  "decision_state": "QUALIFIED",
+  "admitted_ids": [
+    "customer-1",
+    "industry-1",
+    "internal-approved",
+    "web-1"
+  ],
+  "dispositions": {
+    "internal-draft": "QUARANTINED",
+    "unknown-web": "EXCLUDED"
+  }
+}

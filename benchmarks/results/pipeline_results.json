@@ -1,0 +1,42 @@
+{
+  "environment": {
+    "toolkit_version": "0.5.3",
+    "spec_version": "0.3.0",
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "cpu_count": 5
+  },
+  "scope": "three-stage reference pipeline; excludes model inference, retrieval, connector I/O and external action execution",
+  "results": [
+    {
+      "disposition": "INFORM",
+      "objects": 1000,
+      "iterations": 20,
+      "median_ms": 56.043841,
+      "q1_ms": 55.32076575,
+      "q3_ms": 56.98211775,
+      "iqr_ms": 1.6613520000000008,
+      "mean_ms": 61.5119549
+    },
+    {
+      "disposition": "DECIDE",
+      "objects": 1000,
+      "iterations": 20,
+      "median_ms": 55.7417335,
+      "q1_ms": 55.447162500000005,
+      "q3_ms": 56.0993935,
+      "iqr_ms": 0.6522309999999933,
+      "mean_ms": 56.07634175
+    },
+    {
+      "disposition": "ACT",
+      "objects": 1000,
+      "iterations": 20,
+      "median_ms": 56.3883165,
+      "q1_ms": 56.158213499999995,
+      "q3_ms": 56.85879525,
+      "iqr_ms": 0.7005817500000049,
+      "mean_ms": 56.929240300000004
+    }
+  ]
+}

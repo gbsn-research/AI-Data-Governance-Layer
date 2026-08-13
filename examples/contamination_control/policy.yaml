@@ -1,0 +1,28 @@
+adgl: {version: "0.3"}
+policy: {id: customer-objection-contamination, version: 1}
+profiles: [core, evidence_governance]
+case: {id: customer_objection_analysis, purpose: customer_research}
+rules:
+  - id: interviews_primary
+    select: {all: [{source.id: customer_interviews}, {provenance_status: verified}]}
+    do: [{assign_role: {role: PRIMARY}}, {prioritize: {rank: 100}}]
+  - id: crm_corroborating
+    select: {source.id: crm}
+    do: [{assign_role: {role: CORROBORATING}}]
+  - id: isolate_synthetic
+    select: {content.origin: synthetic}
+    do: [{isolate: {pool: synthetic_only}}]
+  - id: exclude_test_users
+    select: {author_or_actor: {in: [spam_account_19, internal_test_user]}}
+    do: [{exclude: {reason: prohibited_origin}}]
+  - id: quarantine_drafts
+    select: {status: draft}
+    do: [{quarantine: {reason: unapproved}}]
+  - id: quarantine_unknown
+    select: {provenance_status: unknown}
+    do: [{quarantine: {reason: provenance_unknown}}]
+  - id: exclude_superseded
+    select: {status: superseded}
+    do: [{exclude: {}}]
+decision: {default: PERMITTED}
+audit: {required: true}

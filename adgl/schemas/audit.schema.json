@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ADGL AuditRecord",
+  "type": "object",
+  "required": [
+    "case_id",
+    "policy_ids_and_versions",
+    "object_dispositions",
+    "decision_state"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "purpose": {},
+    "policy_ids_and_versions": {
+      "type": "array"
+    },
+    "candidate_object_ids": {
+      "type": "array"
+    },
+    "object_dispositions": {
+      "type": "object"
+    },
+    "conflicts": {
+      "type": "array"
+    },
+    "decision_state": {
+      "enum": [
+        "PERMITTED",
+        "QUALIFIED",
+        "BLOCKED",
+        "ABSTAINED",
+        "ESCALATED",
+        "AWAITING_REVIEW"
+      ]
+    },
+    "events": {
+      "type": "array"
+    },
+    "reason_code": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

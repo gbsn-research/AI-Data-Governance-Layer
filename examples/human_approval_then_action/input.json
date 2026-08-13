@@ -1,0 +1,34 @@
+{
+  "objects": [
+    {
+      "id": "case-file",
+      "status": "approved",
+      "provenance_status": "verified"
+    }
+  ],
+  "analysis_result": {
+    "id": "ar-4",
+    "confidence": 0.98,
+    "refund_amount": 420,
+    "uses_inferred_missing": false
+  },
+  "human_decision": {
+    "decision": "APPROVE",
+    "actor": "manager-1",
+    "role": "support_manager"
+  },
+  "action": {
+    "type": "billing.issue_refund",
+    "target": "customer-1",
+    "financial_value": 420
+  },
+  "capability_grant": {
+    "id": "g2",
+    "actions": [
+      "billing.issue_refund"
+    ],
+    "case_id": "human_approval_then_action",
+    "max_calls": 1,
+    "max_value": 500
+  }
+}

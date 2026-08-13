@@ -1,0 +1,57 @@
+{
+  "objects": [
+    {
+      "id": "eu-file-1",
+      "classification": "RESTRICTED",
+      "region": "EU",
+      "status": "active"
+    }
+  ],
+  "models": [
+    {
+      "id": "external-us",
+      "provider": "vendor-a",
+      "region": "us-east",
+      "deployment": "external",
+      "approved": true,
+      "allowed_classifications": [
+        "PUBLIC",
+        "INTERNAL"
+      ],
+      "priority": 100
+    },
+    {
+      "id": "gemini-eu",
+      "provider": "vendor-b",
+      "region": "eu-west",
+      "deployment": "managed",
+      "approved": true,
+      "allowed_classifications": [
+        "RESTRICTED"
+      ],
+      "priority": 50
+    },
+    {
+      "id": "private-frankfurt",
+      "provider": "private",
+      "region": "eu-central",
+      "deployment": "customer_controlled",
+      "approved": true,
+      "allowed_classifications": [
+        "RESTRICTED"
+      ],
+      "priority": 90
+    },
+    {
+      "id": "asia-model",
+      "provider": "vendor-c",
+      "region": "asia-east",
+      "deployment": "managed",
+      "approved": true,
+      "allowed_classifications": [
+        "RESTRICTED"
+      ],
+      "priority": 80
+    }
+  ]
+}

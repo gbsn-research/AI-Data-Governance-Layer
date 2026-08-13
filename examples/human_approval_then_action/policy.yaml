@@ -1,0 +1,32 @@
+knowledge_policy:
+  adgl:
+    version: '0.3'
+  policy:
+    id: human_approval_then_action
+    version: 1
+  case:
+    id: human_approval_then_action
+  rules: []
+  decision:
+    default: PERMITTED
+  audit:
+    required: true
+analysis:
+  method: SCORE
+  allowed_methods:
+  - SCORE
+  min_evidence: 1
+consequence:
+  default: INFORM
+  rules:
+  - when:
+      analysis.result.refund_amount:
+        between:
+        - 101
+        - 10000
+    disposition: DECIDE
+    decision_owner: support_manager
+    then: ACT
+    executor: billing_api
+    action:
+      type: billing.issue_refund

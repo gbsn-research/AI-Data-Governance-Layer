@@ -1,0 +1,15 @@
+{
+  "decision_state": "PERMITTED",
+  "admitted_ids": [
+    "approved-study",
+    "crm-1",
+    "interview-1"
+  ],
+  "dispositions": {
+    "synthetic-1": "ISOLATED",
+    "spam-1": "EXCLUDED",
+    "draft-1": "QUARANTINED",
+    "unknown-1": "QUARANTINED",
+    "old-1": "EXCLUDED"
+  }
+}

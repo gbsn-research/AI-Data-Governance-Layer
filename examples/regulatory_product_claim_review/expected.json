@@ -1,0 +1,12 @@
+{
+  "decision_state": "AWAITING_REVIEW",
+  "admitted_ids": [
+    "ema-current",
+    "internal-approved",
+    "public-commentary"
+  ],
+  "dispositions": {
+    "internal-old": "EXCLUDED",
+    "legal-draft": "QUARANTINED"
+  }
+}

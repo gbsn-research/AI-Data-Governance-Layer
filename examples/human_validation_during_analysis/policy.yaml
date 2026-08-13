@@ -1,0 +1,21 @@
+knowledge_policy:
+  adgl:
+    version: '0.3'
+  policy:
+    id: analysis_validation
+    version: 1
+  case:
+    id: analysis_validation
+  rules: []
+  decision:
+    default: PERMITTED
+  audit:
+    required: true
+analysis:
+  method: CLASSIFY
+  allowed_methods:
+  - CLASSIFY
+  min_evidence: 1
+  validation_below_confidence: 0.8
+consequence:
+  default: INFORM

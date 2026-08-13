@@ -1,0 +1,62 @@
+{
+  "objects": [
+    {
+      "id": "internal-approved",
+      "source": {
+        "id": "internal_research"
+      },
+      "status": "approved",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "customer-1",
+      "source": {
+        "id": "customer_interviews"
+      },
+      "status": "active",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "industry-1",
+      "source": {
+        "id": "industry_reports"
+      },
+      "status": "active",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "web-1",
+      "source": {
+        "id": "public_web"
+      },
+      "status": "active",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "internal-draft",
+      "source": {
+        "id": "internal_research"
+      },
+      "status": "draft",
+      "provenance_status": "verified"
+    },
+    {
+      "id": "unknown-web",
+      "source": {
+        "id": "public_web"
+      },
+      "status": "active",
+      "provenance_status": "unverified"
+    }
+  ],
+  "conflicts": [
+    {
+      "type": "EVIDENCE_CONFLICT",
+      "between": [
+        "internal-approved",
+        "industry-1"
+      ],
+      "resolved": false
+    }
+  ]
+}
